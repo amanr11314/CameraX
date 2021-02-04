@@ -8,28 +8,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 
-class MyGridRecyclerAdapter(
+class GalleryGridRecyclerAdapter(
     private val files: List<String>
-) : RecyclerView.Adapter<MyGridRecyclerAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<GalleryGridRecyclerAdapter.ViewHolder>() {
 
     lateinit var displayMetrics: DisplayMetrics
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.single_item, parent, false)
+            .inflate(R.layout.single_gallery_item, parent, false)
 
         displayMetrics = parent.context.resources.displayMetrics
-
-
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val img = files[position]
         val imgBitMap = BitmapFactory.decodeFile(img)
-        holder.imgView.layoutParams.width = (holder.dpWidth/4).toInt()
-        holder.imgView.layoutParams.height = (holder.dpWidth/4).toInt()
+//        holder.imgView.layoutParams.width = (holder.dpWidth).toInt()
+//        holder.imgView.layoutParams.height = (holder.dpWidth).toInt()
         holder.imgView.setImageBitmap(imgBitMap)
     }
 
@@ -37,7 +34,7 @@ class MyGridRecyclerAdapter(
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var imgView: ImageView = view.findViewById(R.id.imgGalleryItem)
-        private val pxWidth = displayMetrics.widthPixels
-        val dpWidth = pxWidth / displayMetrics.density
+        private val pxWidth = displayMetrics.widthPixels / 4
+        val dpWidth = pxWidth * displayMetrics.density
     }
 }
