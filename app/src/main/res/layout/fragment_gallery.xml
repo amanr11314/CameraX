@@ -6,6 +6,9 @@
     android:name="com.amantech.cameraxapp.GridFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutManager="LinearLayoutManager"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:context=".GalleryFragment"
-    tools:listitem="@layout/single_gallery_item" />
+    tools:listitem="@layout/single_gallery_item">
+
+
+</androidx.recyclerview.widget.RecyclerView>

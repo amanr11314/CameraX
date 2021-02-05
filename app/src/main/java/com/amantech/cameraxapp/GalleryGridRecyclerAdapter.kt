@@ -23,18 +23,32 @@ class GalleryGridRecyclerAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        //get imagePath
         val img = files[position]
+        //decode bitmap image
         val imgBitMap = BitmapFactory.decodeFile(img)
-//        holder.imgView.layoutParams.width = (holder.dpWidth).toInt()
-//        holder.imgView.layoutParams.height = (holder.dpWidth).toInt()
+
+        //setting image ascpect ratio 0.25*0.25 of screen width
+        val IMAGE_SCREEN_WIDTH_RATIO = 0.25f;
+
+        //get actual screen width
+        val screenWidth = displayMetrics.widthPixels
+
+        //define imageViewSize w.r.t aspect ratio
+        val imageViewSize: Int = ((screenWidth * IMAGE_SCREEN_WIDTH_RATIO).toFloat()).toInt()
+
+        //changing image width and height
+        val params = holder.imgView.layoutParams
+        params.height = imageViewSize
+        params.width = imageViewSize
+
+        //put bitmap image into image view
         holder.imgView.setImageBitmap(imgBitMap)
     }
 
     override fun getItemCount(): Int = files.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var imgView: ImageView = view.findViewById(R.id.imgGalleryItem)
-        private val pxWidth = displayMetrics.widthPixels / 4
-        val dpWidth = pxWidth * displayMetrics.density
+        val imgView: ImageView = view.findViewById(R.id.imgGalleryItem)
     }
 }

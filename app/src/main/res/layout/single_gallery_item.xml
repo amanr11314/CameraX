@@ -3,8 +3,4 @@
     android:id="@+id/imgGalleryItem"
     android:layout_width="100dp"
     android:layout_height="100dp"
-
-    >
-
-
-</ImageView>
+    android:scaleType="centerCrop" />
