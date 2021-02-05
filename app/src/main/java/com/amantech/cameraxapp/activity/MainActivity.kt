@@ -1,8 +1,9 @@
-package com.amantech.cameraxapp
+package com.amantech.cameraxapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
+import com.amantech.cameraxapp.R
+import com.amantech.cameraxapp.fragment.CameraPreviewFragment
 
 class MainActivity : AppCompatActivity() {
 

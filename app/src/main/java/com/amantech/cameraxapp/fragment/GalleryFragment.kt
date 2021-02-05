@@ -1,4 +1,4 @@
-package com.amantech.cameraxapp
+package com.amantech.cameraxapp.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.amantech.cameraxapp.adapter.GalleryGridRecyclerAdapter
+import com.amantech.cameraxapp.R
 import java.io.File
 
 class GalleryFragment : Fragment() {

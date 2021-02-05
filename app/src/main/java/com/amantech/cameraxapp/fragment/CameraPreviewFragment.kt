@@ -1,4 +1,4 @@
-package com.amantech.cameraxapp
+package com.amantech.cameraxapp.fragment
 
 import android.Manifest
 import android.content.Context
@@ -19,6 +19,7 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
+import com.amantech.cameraxapp.R
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
